@@ -1,0 +1,17 @@
+# Uncomment this line to define a global platform for your project
+
+source 'https://github.com/Cocoapods/Specs.git'
+platform :ios, '8.0'
+
+target 'O365-iOS-Connect' do
+
+pod 'ADALIOS', '~> 1.0.0' # 1.0.0 < ver < 1.1.0
+pod 'Office365/Outlook', '~> 0.8.3'
+pod 'Office365/Discovery', '~> 0.8.3'
+pod 'Office365/Files', '~> 0.8.3'
+
+end
+
+
+
+
