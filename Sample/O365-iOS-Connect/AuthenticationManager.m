@@ -83,10 +83,10 @@ static NSString * const AUTHORITY           = @"https://login.microsoftonline.co
                                        [userDefaults synchronize];
 
                                        // Setting the dependency resolver on the authentication manager.
-                                       self.dependencyResolver = [[ADALDependencyResolver alloc] initWithContext:(id<ADAuthenticationContext>)self.authContext
-                                               andResourceId:resourceId
-                                                 andClientId:self.clientId
-                                              andRedirectUri:self.redirectURL];
+                                       self.dependencyResolver = [[ADALDependencyResolver alloc] initWithContext:self.authContext
+                                                                                                      resourceId:resourceId
+                                                                                                        clientId:self.clientId
+                                                                                                     redirectUri:self.redirectURL];
                                        completionBlock(YES);
                                    }
                                }];

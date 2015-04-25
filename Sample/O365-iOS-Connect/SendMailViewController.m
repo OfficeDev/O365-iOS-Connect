@@ -5,6 +5,7 @@
 #import "SendMailViewController.h"
 #import "Office365ClientFetcher.h"
 #import "AuthenticationManager.h"
+#import "MSDiscoveryServiceInfoCollectionFetcher.h"
 
 @interface SendMailViewController ()
 
@@ -90,8 +91,8 @@
     [self.baseController fetchDiscoveryClient:^(MSDiscoveryClient *discoveryClient) {
         MSDiscoveryServiceInfoCollectionFetcher *servicesInfoFetcher = [discoveryClient getservices];
 
-        // Call the Discovery Service and get back an array of service endpoint information.
-        NSURLSessionDataTask *servicesTask = [servicesInfoFetcher read:^(NSArray *serviceEndpoints, MSODataException *error) {
+        // Call the Discovery Service and get back an array of service endpoint information
+        NSURLSessionTask *servicesTask = [servicesInfoFetcher readWithCallback:^(NSArray *serviceEndpoints, MSODataException *error) {
             if (serviceEndpoints) {
                 
                 // Here is where we cache the service URLs returned by the Discovery Service. You may not
@@ -148,23 +149,23 @@
 // by using Office 365.
 - (void)sendMailMessage
 {
-    MSOutlookMessage *message = [self buildMessage];
+    MSOutlookServicesMessage *message = [self buildMessage];
 
-    // Get the MSOutlookClient. A call will be made to Azure AD and you will be prompted for credentials if you don't
+    // Get the MSOutlookServicesClient. A call will be made to Azure AD and you will be prompted for credentials if you don't
     // have an access or refresh token in your token cache.
-    [self.baseController fetchOutlookClient:^(MSOutlookClient *outlookClient) {
+    [self.baseController fetchOutlookClient:^(MSOutlookServicesClient *outlookClient) {
         dispatch_async(dispatch_get_main_queue(), ^{
             // Show the activity indicator
             [self.activityIndicator startAnimating];
         });
 
-        MSOutlookUserFetcher *userFetcher = [outlookClient getMe];
-        MSOutlookUserOperations *userOperations = [userFetcher getOperations];
+        MSOutlookServicesUserFetcher *userFetcher = [outlookClient getMe];
+        MSOutlookServicesUserOperations *userOperations = [userFetcher operations];
 
         // Send the mail message. This results in a call to the service.
-        NSURLSessionDataTask *task = [userOperations sendMail:message
-                                                             :YES
-                                                             :^(int returnValue, MSODataException *error) {
+        NSURLSessionTask *task = [userOperations sendMailWithMessage:message
+                                                     saveToSentItems:YES
+                                                            callback:^(int returnValue, MSODataException *error) {
             NSString *statusText;
 
             if (error == nil) {
@@ -187,10 +188,10 @@
 }
 
 //Compose the mail message
-- (MSOutlookMessage *)buildMessage
+- (MSOutlookServicesMessage *)buildMessage
 {
     // Create a new message. Set properties on the message.
-    MSOutlookMessage *message = [[MSOutlookMessage alloc] init];
+    MSOutlookServicesMessage *message = [[MSOutlookServicesMessage alloc] init];
     message.Subject = @"Welcome to Office 365 development on iOS with the Office 365 Connect sample";
 
     // Get the recipient's email address.
@@ -198,19 +199,19 @@
     // See the helper method getRecipients to understand the usage.
     NSString *toEmail = self.emailTextField.text;
 
-    MSOutlookRecipient *recipient = [[MSOutlookRecipient alloc] init];
+    MSOutlookServicesRecipient *recipient = [[MSOutlookServicesRecipient alloc] init];
 
-    recipient.EmailAddress = [[MSOutlookEmailAddress alloc] init];
+    recipient.EmailAddress = [[MSOutlookServicesEmailAddress alloc] init];
     recipient.EmailAddress.Address = [toEmail stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 
     // The cast here is required to maintain compatibility with the API.
-    message.ToRecipients = (NSMutableArray<MSOutlookRecipient> *)[[NSMutableArray alloc] initWithObjects:recipient, nil];
+    message.ToRecipients = (NSMutableArray<MSOutlookServicesRecipient> *)[[NSMutableArray alloc] initWithObjects:recipient, nil];
 
     // Get the email text and put in the email body.
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"EmailBody" ofType:@"html" ];
     NSString *body = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    message.Body = [[MSOutlookItemBody alloc] init];
-    message.Body.ContentType = HTML;
+    message.Body = [[MSOutlookServicesItemBody alloc] init];
+    message.Body.ContentType = MSOutlookServices_BodyType_HTML;
     message.Body.Content = body;
 
     return message;

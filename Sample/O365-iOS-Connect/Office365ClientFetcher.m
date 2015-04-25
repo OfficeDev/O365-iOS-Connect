@@ -14,7 +14,7 @@
 // has expired, the client will use the refresh token to get a new access token.
 // If the refresh token has expired, then ADAL will get the authorization code
 // from the cookie cache and use that to get a new access and refresh token.
-- (void)fetchOutlookClient:(void (^)(MSOutlookClient *outlookClient))callback
+- (void)fetchOutlookClient:(void (^)(MSOutlookServicesClient *outlookClient))callback
 {
     // Get an instance of the authentication controller.
     AuthenticationManager *authenticationManager = [AuthenticationManager sharedInstance];
@@ -33,8 +33,8 @@
 
             NSDictionary *serviceEndpoints = [userDefaults objectForKey:@"O365ServiceEndpoints"];
 
-            // Gets the MSOutlookClient with the URL for the Mail service.
-            callback([[MSOutlookClient alloc] initWithUrl:serviceEndpoints[@"Mail"]
+            // Gets the MSOutlookServicesClient with the URL for the Mail service.
+            callback([[MSOutlookServicesClient alloc] initWithUrl:serviceEndpoints[@"Mail"]
                                        dependencyResolver:authenticationManager.dependencyResolver]);
             
         }
