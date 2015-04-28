@@ -49,9 +49,12 @@ If the install and setup were successful, you should see the message **Setup com
 The O365 iOS Connect app already contains a podfile that will get the Office 365 and ADAL components (pods) into your project. It's located in the sample root ("Podfile"). The example shows the contents of the file.
 
 	target ‘test’ do
-	pod 'ADALiOS', '~> 1.0.0'   # 1.0.0 < ver < 1.1.0
-	pod 'Office365/Outlook', '~> 0.9.0'
-	pod 'Office365/Discovery', '~> 0.9.0'
+
+    pod 'ADALIOS', '~> 1.2.0'
+    pod 'Office365/Outlook', '= 0.9.0'
+    pod 'Office365/Discovery', '= 0.9.0'
+    pod 'Office365/Files', '= 0.9.0'
+
 	end
 
 
