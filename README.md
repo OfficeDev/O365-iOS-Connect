@@ -58,7 +58,7 @@ The O365 iOS Connect app already contains a podfile that will get the Office 365
 	end
 
 
-You'll simply need need to navigate to the project directory in the **Terminal** (root of the project folder) and run the following command.
+You'll simply need to navigate to the project directory in the **Terminal** (root of the project folder) and run the following command.
 
 
     pod install
