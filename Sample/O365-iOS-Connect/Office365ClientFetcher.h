@@ -6,12 +6,12 @@
 #import <office365_odata_base/office365_odata_base.h>
 #import <office365_exchange_sdk/office365_exchange_sdk.h>
 #import "MSDiscoveryClient.h"
-#import <MSOutlookServicesClient.h>
+#import <MSOutlookClient.h>
 
 // Provides the client objects for making requests against the service.
 @interface Office365ClientFetcher : NSObject
 
-- (void)fetchOutlookClient:(void (^)(MSOutlookServicesClient *outlookClient))callback;
+- (void)fetchOutlookClient:(void (^)(MSOutlookClient *outlookClient))callback;
 - (void)fetchDiscoveryClient:(void (^)(MSDiscoveryClient *discoveryClient))callback;
 
 @end
