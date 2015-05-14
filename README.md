@@ -51,9 +51,9 @@ The O365 iOS Connect app already contains a podfile that will get the Office 365
 	target ‘test’ do
 
     pod 'ADALiOS', '~> 1.2.1'
-    pod 'Office365/Outlook', '= 0.9.0'
-    pod 'Office365/Discovery', '= 0.9.0'
-    pod 'Office365/Files', '= 0.9.0'
+    pod 'Office365/Outlook', '= 0.9.1'
+    pod 'Office365/Discovery', '= 0.9.1'
+    pod 'Office365/Files', '= 0.9.1'
 
 	end
 
