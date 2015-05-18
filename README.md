@@ -1,5 +1,7 @@
 #Office 365 Connect app for iOS#
 
+[日本 (日本語)](/loc/README-ja.md)
+
 Connecting to Office 365 is the first step every iOS app must take to start working with the rich data and services Office 365 offers. This sample shows how to connect to Office 365 and call the sendMail API to send an email from your Office 365 mail account. You can use this sample as a starting point to quickly connect your iOS apps to Office 365.
 
 **Table of contents**
