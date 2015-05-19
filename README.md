@@ -15,7 +15,7 @@ Connecting to Office 365 is the first step every iOS app must take to start work
 * [Additional resources](#additional-resources)
 
 
-
+<a name="set-up-your-environment"></a>
 ## Set up your environment ##
 
 To run the Office 365 Connect app for iOS, you need the following:
@@ -36,6 +36,7 @@ Once you have an Office 365 account, an Azure AD account that is bound to your O
 2. Install and use CocoaPods to get the Office 365 and ADAL authentication dependencies into your project. We'll show you how to do this later.
 3. Enter the Azure app registration specifics (ClientID and RedirectUri) into the Office 365 Connect app.
 
+<a name="use-cocoapods-to-import-the-o365-ios-sdk"></a>
 ## Use CocoaPods to import the O365 iOS SDK
 Note: If you've never used **CocoaPods** before as a dependency manager you'll have to install it prior to getting your Office 365 iOS SDK dependencies into your project. If you already have it installed you may skip this and move on to **Getting the Office 365 SDK for iOS dependencies in your project**.
 
@@ -67,6 +68,7 @@ You'll simply need to navigate to the project directory in the **Terminal** (roo
 
 Note: You should receive confirmation that these dependencies have been added to the project and that you must open the workspace instead of the project from now on in Xcode (**O365-iOS-Connect.xcworkspace**).  If there is a syntax error in the Podfile, you will encounter an error when you run the install command.
 
+<a name="register-your-app-with-microsoft-azure"></a>
 ## Register your app with Microsoft Azure
 1.	Sign in to the [Azure Management Portal](https://manage.windowsazure.com), using your Azure AD credentials.
 2.	Click **Active Directory** on the left menu, then click the directory for your Office 365 developer site.
@@ -81,7 +83,7 @@ Note: You should receive confirmation that these dependencies have been added to
 13.	Copy the value specified for **Client ID** on the **Configure** page. Remember this value for the section **Getting the ClientID and RedirectUri into the project**.
 14.	Click **Save** in the bottom menu.
 
-
+<a name="get-the-client-id-and-redirect-uri-into-the-project"></a>
 ## Get the Client ID and Redirect Uri into the project
 
 Finally you'll need to add the Client ID and Redirect Uri you recorded from the previous section **Register your app with Microsoft Azure**.
@@ -96,7 +98,7 @@ Browse the **O365-iOS-Connect** project directory and open up the workspace (O36
 
 
 
-
+<a name="code-of-interest"></a>
 ## Code of Interest
 
 **Authentication with Azure AD**
@@ -119,12 +121,13 @@ The code for using the O365 Discovery service to retrieve the Exchange service e
 The code for the operation to send mail is located in the sendMailMessage method in the SendMailViewController.m files.
 
 
-
+<a name="questions-and-comments"></a>
 ## Questions and comments
 
 We'd love to get your input on this Office 365 iOS sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/O365-iOS-Connect) section of this repository. <br>
 Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
 
+<a name="additional-resources"></a>
 ## Additional resources
 
 * [Office 365 APIs documentation](http://msdn.microsoft.com/office/office365/howto/platform-development-overview)

@@ -13,7 +13,7 @@ Office 365 への接続は、各 iOS アプリが Office 365 によって提供�
 * [その他の技術情報](#additional-resources)
 
 
-
+<a name="set-up-your-environment"></a>
 ## 環境を設定する ##
 
 iOS 版 Office 365 Connect アプリを実行するには、以下が必要です。
@@ -35,6 +35,7 @@ Office 365 アカウント、および Office 365 開発者サイトにバイン
 2. CocoaPods をインストールし、これを使用して、プロジェクトに Office 365 と ADAL 認証の依存関係を取り込みます。この方法については後で説明します。
 3. Azure アプリの登録固有の情報 (ClientID と RedirectUri) を、Office 365 Connect アプリに入力します。
 
+<a name="use-cocoapods-to-import-the-o365-ios-sdk"></a>
 ## CocoaPods を使用して Office 365 iOS SDK をインポートする
 注:依存関係マネージャーとして **CocoaPods** を初めて使用する場合は、これをインストールしてからプロジェクトで Office 365 iOS SDK の依存関係を取り込む必要があります。インストール済みの場合は、この手順を省略して「**プロジェクトに iOS 版 Office 365 SDK の依存関係を取り込む**」に移動しても構いません。
 
@@ -66,6 +67,7 @@ Office 365 iOS Connect アプリには、プロジェクトに Office 365 と AD
 
 注:「これらの依存関係がプロジェクトに追加されました。今すぐ Xcode (**O365-iOS-Connect.xcworkspace**) でプロジェクトの代わりにワークスペースを開く必要があります」という確認のメッセージを受信する必要があります。Podfile で構文エラーが発生すると、インストール コマンドを実行する際にエラーが発生します。
 
+<a name="register-your-app-with-microsoft-azure"></a>
 ## Microsoft Azure にアプリを登録する
 1.	Azure AD 資格情報を使用して、[Azure 管理ポータル](https://manage.windowsazure.com)にサインインします。
 2.	左側のメニューで **[Active Directory]** をクリックしてから、Office 365 開発者向けサイトのディレクトリをクリックします。
@@ -80,7 +82,7 @@ Office 365 iOS Connect アプリには、プロジェクトに Office 365 と AD
 13.	**[構成]** ページで、**[クライアント ID]** に指定された値をコピーします。この値は、「**プロジェクトに ClientID と RedirectUri を取り込む**」セクションで使用するため覚えておいてください。
 14.	下部のメニューで、**[保存]** をクリックします。
 
-
+<a name="get-the-client-id-and-redirect-uri-into-the-project"></a>
 ## クライアント ID を取得して、URI をプロジェクトにリダイレクトする
 
 最後に、前のセクション「**Microsoft Azure にアプリを登録する**」で記録したクライアント ID とリダイレクト URI を追加する必要があります。
@@ -95,7 +97,7 @@ Office 365 iOS Connect アプリには、プロジェクトに Office 365 と AD
 
 
 
-
+<a name="code-of-interest"></a>
 ## 目的のコード
 
 **Azure AD での認証**
@@ -118,11 +120,12 @@ Office 365 探索サービスを使用して Exchange サービスのエンド�
 メールを送信する操作のコードは、SendMailViewController.m ファイルの sendMailMessage メソッドにあります。
 
 
-
+<a name="questions-and-comments"></a>
 ## 質問とコメント
 
 iOS 版 Office 365 のサンプルについて、Microsoft にフィードバックをお寄せください。フィードバックは、このリポジトリの「[問題](https://github.com/OfficeDev/O365-iOS-Connect)」セクションに送信できます。<br>Office 365 の開発全般については、「[スタック オーバーフロー](http://stackoverflow.com/questions/tagged/Office365+API)」に送信してください。質問には、必ず [Office365] および [API] のタグを付けてください。
 
+<a name="additional-resources"></a>
 ## その他の技術情報
 
 * [Office 365 API ドキュメント](http://msdn.microsoft.com/office/office365/howto/platform-development-overview)
