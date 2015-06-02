@@ -2,7 +2,7 @@
 
 [日本 (日本語)](/loc/README-ja.md)
 
-Connecting to Office 365 is the first step every iOS app must take to start working with the rich data and services Office 365 offers. This sample shows how to connect to Office 365 and call the sendMail API to send an email from your Office 365 mail account. You can use this sample as a starting point to quickly connect your iOS apps to Office 365.
+Connecting to Office 365 is the first step every iOS app must take to start working with the rich data and services Office 365 offers. This sample shows how to connect to Office 365 and call the sendMail API to send an email from your Office 365 mail account. You can use this sample as a starting point to quickly connect your iOS apps to Office 365. It comes in both Objective-C and Swift versions.
 
 **Table of contents**
 
@@ -103,22 +103,22 @@ Browse the **O365-iOS-Connect** project directory and open up the workspace (O36
 
 **Authentication with Azure AD**
 
-The code for authenticating with Azure AD, which includes retrieval and management of your access tokens is located in the AuthenticationManager.m file.
+The code for authenticating with Azure AD, which includes retrieval and management of your access tokens is located in AuthenticationManager.
 
 
 **Outlook Services Client**
 
-The code for creating your Outlook Services client is located in the Office365ClientFetcher.m file. The code in this file creates the Outlook Services client object required for performing API calls against the Office 365 Exchange service. The client requests will leverage the authentication code to get the application an access and refresh token to act on behalf of the user. The access and refresh token will be cached. The next time a user attempts to access the service, the access token will be issued. If the access token has expired, the client will issue the refresh token to get a new access token.
+The code for creating your Outlook Services client is located in Office365ClientFetcher. The code in this file creates the Outlook Services client object required for performing API calls against the Office 365 Exchange service. The client requests will leverage the authentication code to get the application an access and refresh token to act on behalf of the user. The access and refresh token will be cached. The next time a user attempts to access the service, the access token will be issued. If the access token has expired, the client will issue the refresh token to get a new access token.
 
 
 **Discovery Service**
 
-The code for using the O365 Discovery service to retrieve the Exchange service endpoints/URLs is located in the internal method connectToOffice365 is called from the viewDidLoad method in the SendMailViewController.m file.
+The code for using the O365 Discovery service to retrieve the Exchange service endpoints/URLs is located in the internal method connectToOffice365 is called from the viewDidLoad method in SendMailViewController.
 
 
 **Office 365 SendMail snippet**
 
-The code for the operation to send mail is located in the sendMailMessage method in the SendMailViewController.m files.
+The code for the operation to send mail is located in the sendMailMessage method in the SendMailViewController.
 
 
 <a name="questions-and-comments"></a>
