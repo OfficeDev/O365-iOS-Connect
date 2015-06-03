@@ -10,7 +10,3 @@ pod 'Office365/Discovery', '= 0.9.1'
 
 end
 
-target 'O365-iOS-Connect-SwiftTests' do
-
-end
-
