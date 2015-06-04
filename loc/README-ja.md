@@ -1,6 +1,6 @@
 #iOS# 版 Office 365 Connect アプリ
 
-Office 365 への接続は、各 iOS アプリが Office 365 によって提供される豊富なデータとサービスの操作を開始するために必要な最初の手順です。このサンプルは、Office 365 に接続し、sendMail API を呼び出して、Office 365 の電子メール アカウントから電子メールを送信する方法を示します。このサンプルは、iOS アプリを Office 365 にすばやく接続する開始点として使用できます。
+Office 365 への接続は、各 iOS アプリが Office 365 によって提供される豊富なデータとサービスの操作を開始するために必要な最初の手順です。このサンプルは、Office 365 に接続し、sendMail API を呼び出して、Office 365 の電子メール アカウントから電子メールを送信する方法を示します。このサンプルは、iOS アプリを Office 365 にすばやく接続する開始点として使用できます。Objective-C と Swift の両方のバージョンが用意されています。
 
 **目次**
 
@@ -19,8 +19,7 @@ Office 365 への接続は、各 iOS アプリが Office 365 によって提供�
 iOS 版 Office 365 Connect アプリを実行するには、以下が必要です。
 
 
-* 
-            Apple 社の [Xcode](https://developer.apple.com/)。
+* Apple 社の [Xcode](https://developer.apple.com/)。
 * Office 365 アカウント。Office 365 アカウントは、[Office 365 開発者向けサイト](http://msdn.microsoft.com/ja-jp/library/office/fp179924.aspx)にサイン アップすると取得できます。これにより、Office 365 のデータを対象とするアプリの作成に使用できる API にアクセスできるようになります。
 * アプリケーションを登録する Microsoft Azure テナント。Azure Active Directory は、アプリケーションが認証と承認に使用する ID サービスを提供します。ここでは、試用版サブスクリプションを取得できます。[Microsoft Azure](https://account.windowsazure.com/SignUp)。
 
@@ -52,10 +51,10 @@ Office 365 iOS Connect アプリには、プロジェクトに Office 365 と AD
 
 	target ‘test’ do
 
-    pod 'ADALIOS', '~> 1.2.0'
-    pod 'Office365/Outlook', '= 0.9.0'
-    pod 'Office365/Discovery', '= 0.9.0'
-    pod 'Office365/Files', '= 0.9.0'
+    pod 'ADALiOS', '~> 1.2.1'
+    pod 'Office365/Outlook', '= 0.9.1'
+    pod 'Office365/Discovery', '= 0.9.1'
+    pod 'Office365/Files', '= 0.9.1'
 
 	end
 
@@ -102,22 +101,22 @@ Office 365 iOS Connect アプリには、プロジェクトに Office 365 と AD
 
 **Azure AD での認証**
 
-アクセス トークンの取得と管理が含まれる Azure AD での認証用のコードは、AuthenticationManager.m ファイルにあります。
+アクセス トークンの取得と管理が含まれる Azure AD での認証用のコードは、AuthenticationManager にあります。
 
 
 **Outlook サービス クライアント**
 
-Outlook サービス クライアントを作成するコードは、Office365ClientFetcher.m ファイルにあります。このファイル内のコードは、Office 365 Exchange サービスに対する API の呼び出しを実行するために必要な Outlook サービス クライアント オブジェクトを作成します。クライアント要求は、認証コードを利用して、アプリケーションがユーザーの代理として操作するためのアクセスおよび更新トークンを取得できるようにします。アクセスおよび更新トークンはキャッシュされます。次回ユーザーがサービスへのアクセスを試みる際、アクセス トークンが発行されます。アクセス トークンの有効期限が切れている場合、クライアントは、新しいアクセス トークンを取得するための更新トークンを発行します。
+Outlook サービス クライアントを作成するコードは、Office365ClientFetcher にあります。このファイル内のコードは、Office 365 Exchange サービスに対する API 呼び出しを実行するために必要な Outlook サービス クライアント オブジェクトを作成します。クライアント要求は、認証コードを利用して、アプリケーションがユーザーの代理として操作するためのアクセスおよび更新トークンを取得できるようにします。アクセスおよび更新トークンはキャッシュされます。次回ユーザーがサービスへのアクセスを試みる際、アクセス トークンが発行されます。アクセス トークンの有効期限が切れている場合、クライアントは、新しいアクセス トークンを取得するための更新トークンを発行します。
 
 
 **探索サービス**
 
-Office 365 探索サービスを使用して Exchange サービスのエンドポイント/URL を取得するコードは、内部メソッド connectToOffice365 にあります。このメソッドは、SendMailViewController.m ファイルの viewDidLoad メソッドから呼び出されます。
+Office 365 探索サービスを使用して Exchange サービスのエンドポイント/URL を取得するコードは、内部メソッド connectToOffice365 にあります。このメソッドは、SendMailViewController の viewDidLoad メソッドから呼び出されます。
 
 
 **Office 365 SendMail スニペット**
 
-メールを送信する操作のコードは、SendMailViewController.m ファイルの sendMailMessage メソッドにあります。
+メールを送信する操作のコードは、SendMailViewController の sendMailMessage メソッドにあります。
 
 
 <a name="questions-and-comments"></a>
@@ -133,5 +132,3 @@ iOS 版 Office 365 のサンプルについて、Microsoft にフィードバッ
 * [予定表の REST 操作のリファレンス](http://msdn.microsoft.com/en-us/office/office365/api/calendar-rest-operations)
 * [Office デベロッパー センター](http://dev.office.com/)
 * [Windows 版 Office 365 API スタート プロジェクト](https://github.com/OfficeDev/Office-365-APIs-Starter-Project-for-Windows)
-
-
