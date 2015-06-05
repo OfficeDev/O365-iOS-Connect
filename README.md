@@ -88,7 +88,7 @@ Note: You should receive confirmation that these dependencies have been added to
 
 Finally you'll need to add the Client ID and Redirect Uri you recorded from the previous section **Register your app with Microsoft Azure**.
 
-Browse the **O365-iOS-Connect** project directory and open up the workspace (O365-iOS-Connect.xcworkspace). In the **AuthenticationManager.m** file you'll see that the **ClientID** and **RedirectUri** values can be added to the top of the file. Supply the necessary values here:
+Browse the **O365-iOS-Connect** project directory and open up the workspace (O365-iOS-Connect.xcworkspace). In the **AuthenticationManager** file you'll see that the **ClientID** and **RedirectUri** values can be added to the top of the file. Supply the necessary values here:
 
     // You will set your application's clientId and redirect URI. You get
     // these when you register your application in Azure AD.
