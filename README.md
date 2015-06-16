@@ -49,7 +49,7 @@ If the install and setup were successful, you should see the message **Setup com
 
 
 **Getting the Office 365 SDK for iOS dependencies in your project.**
-The O365 iOS Connect app already contains a podfile that will get the Office 365 and ADAL components (pods) into your project. It's located in the sample root ("Podfile"). The example shows the contents of the file.
+The O365 iOS Connect app already contains a podfile that will get the Office 365 and ADAL components (pods) into your project. It's located in either the **objective-c** or **swift** folder based on sample preference ("Podfile"). The example shows the contents of the file.
 
 	target ‘test’ do
 
