@@ -78,7 +78,7 @@ Note: You should receive confirmation that these dependencies have been added to
 7.	Click the arrow icon on the lower-right corner of the page.
 8.	On the Application information page, specify a Redirect URI, for this example, you can specify http://localhost/connect, and then click the check box in the lower-right hand corner of the page. Remember this value for the section **Getting the ClientID and RedirectUri into the project**.
 9.	Once the application has been successfully added, you will be taken to the Quick Start page for the application. From here, click Configure in the top menu.
-10.	Under **permissions to other applications**, add the following permission: **Add the Office 365 Exchange Online application**, and select **Send mail as a user** permission.
+10.	Under **permissions to other applications**, add the following permission: **Add the Office 365 Exchange Online** application. Next, click the check box in the bottom right corner to add the application. Finally, when you return to the **permissions to other applications** section, select **Send mail as a user** permission under **Delegated Permissions**.
 13.	Copy the value specified for **Client ID** on the **Configure** page. Remember this value for the section **Getting the ClientID and RedirectUri into the project**.
 14.	Click **Save** in the bottom menu.
 
