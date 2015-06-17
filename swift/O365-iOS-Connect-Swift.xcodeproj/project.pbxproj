@@ -98,7 +98,6 @@
 		952E24461B0A92A20089B710 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				95D883CA1B1381A300DD851C /* EmailBody.html */,
 				952E24471B0A92A20089B710 /* Info.plist */,
 				952C94041B0AA450002D38A0 /* O365-Connect-Bridging-Header.h */,
 			);
@@ -108,6 +107,7 @@
 		9AAD25101B1757F9009A6936 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				95D883CA1B1381A300DD851C /* EmailBody.html */,
 				952E244C1B0A92A20089B710 /* Main.storyboard */,
 				952E244F1B0A92A20089B710 /* Images.xcassets */,
 				952E24511B0A92A20089B710 /* LaunchScreen.xib */,

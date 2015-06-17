@@ -209,7 +209,8 @@
 
     // Get the email text and put in the email body.
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"EmailBody" ofType:@"html" ];
-    NSString *body = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    NSString *body = [[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil]
+                      stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
     message.Body = [[MSOutlookItemBody alloc] init];
     message.Body.ContentType = MSOutlook_BodyType_HTML;
     message.Body.Content = body;
