@@ -22,10 +22,10 @@ To run the Office 365 Connect app for iOS, you need the following:
 
 
 * [Xcode](https://developer.apple.com/) from Apple.
-* An Office 365 account. You can get an Office 365 account by signing up for an [Office 365 Developer site](http://msdn.microsoft.com/en-us/library/office/fp179924.aspx). This will give you access to the APIs that you can use to create apps that target Office 365 data.
+* An Office 365 account. You can get an Office 365 account by signing up for an [Office 365 Developer site](http://msdn.microsoft.com/library/office/fp179924.aspx). This will give you access to the APIs that you can use to create apps that target Office 365 data.
 * A Microsoft Azure tenant to register your application. Azure Active Directory provides identity services that applications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
-  **Important**: You will also need to ensure your Azure subscription is bound to your Office 365 tenant. To do this see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also read [Set up Azure Active Directory access for your Developer Site](http://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) for more information.
+  **Important**: You will also need to ensure your Azure subscription is bound to your Office 365 tenant. To do this see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
 
 
 * Installation of [CocoaPods](https://cocoapods.org/) as a dependency manager. CocoaPods will allow you to pull the Office 365 and Azure Active Directory Authentication Library (ADAL) dependencies into the project.
@@ -130,7 +130,7 @@ Questions about Office 365 development in general should be posted to [Stack Ove
 ## Additional resources
 
 * [Office 365 APIs documentation](http://msdn.microsoft.com/office/office365/howto/platform-development-overview)
-* [File REST operations reference](http://msdn.microsoft.com/en-us/office/office365/api/files-rest-operations)
-* [Calendar REST operations reference](http://msdn.microsoft.com/en-us/office/office365/api/calendar-rest-operations)
+* [File REST operations reference](http://msdn.microsoft.com/office/office365/api/files-rest-operations)
+* [Calendar REST operations reference](http://msdn.microsoft.com/office/office365/api/calendar-rest-operations)
 * [Office Dev Center](http://dev.office.com/)
 * [Office 365 APIs Starter Project for Windows](https://github.com/OfficeDev/Office-365-APIs-Starter-Project-for-Windows)
