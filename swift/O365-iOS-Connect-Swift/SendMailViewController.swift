@@ -190,8 +190,8 @@ class SendMailViewController: UIViewController {
 
         // Get the email text and put in the email body.
         let filePath = NSBundle.mainBundle().pathForResource("EmailBody", ofType:"html")
-        let body = NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)
-
+        let body = NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)?.stringByReplacingOccurrencesOfString("\"", withString: "\\\"");
+        
         message.Body = MSOutlookItemBody()
         message.Body.ContentType = MSOutlookBodyType._BodyType_HTML
         message.Body.Content = body! as String
