@@ -129,8 +129,10 @@ Questions about Office 365 development in general should be posted to [Stack Ove
 <a name="additional-resources"></a>
 ## Additional resources
 
+* [Office 365 code snippets for iOS](https://github.com/OfficeDev/O365-iOS-Snippets)
+* [Office 365 Profile Sample for iOS](https://github.com/OfficeDev/O365-iOS-Profile)
+* [Email Peek - An iOS app built using Office 365](https://github.com/OfficeDev/O365-iOS-EmailPeek)
 * [Office 365 APIs documentation](http://msdn.microsoft.com/office/office365/howto/platform-development-overview)
 * [File REST operations reference](http://msdn.microsoft.com/office/office365/api/files-rest-operations)
 * [Calendar REST operations reference](http://msdn.microsoft.com/office/office365/api/calendar-rest-operations)
 * [Office Dev Center](http://dev.office.com/)
-* [Office 365 APIs Starter Project for Windows](https://github.com/OfficeDev/Office-365-APIs-Starter-Project-for-Windows)
