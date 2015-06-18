@@ -136,3 +136,5 @@ Questions about Office 365 development in general should be posted to [Stack Ove
 * [File REST operations reference](http://msdn.microsoft.com/office/office365/api/files-rest-operations)
 * [Calendar REST operations reference](http://msdn.microsoft.com/office/office365/api/calendar-rest-operations)
 * [Office Dev Center](http://dev.office.com/)
+* [Office 365 API code samples and videos](http://aka.ms/o365-android-connect-codesamples)
+
