@@ -23,9 +23,9 @@ To run the Office 365 Connect app for iOS, you need the following:
 
 * [Xcode](https://developer.apple.com/) from Apple.
 * An Office 365 account. You can get an Office 365 account by signing up for an [Office 365 Developer site](http://msdn.microsoft.com/library/office/fp179924.aspx). This will give you access to the APIs that you can use to create apps that target Office 365 data.
-* A Microsoft Azure tenant to register your application. Azure Active Directory provides identity services that applications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure tenant to register your application. Azure Active Directory provides identity services that applications use for authentication and authorization. To create a trial subscription, and associate it with your O365 account, see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment) and the section **To create a new Azure subscription and associate it with your Office 365 accounts** for more information.
 
-  **Important**: You will also need to ensure your Azure subscription is bound to your Office 365 tenant. To do this see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
+  **Important**: If you already have an Azure subscription, you'll need to bind that subscription to your Office 365 account. To do this see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
 
 
 * Installation of [CocoaPods](https://cocoapods.org/) as a dependency manager. CocoaPods will allow you to pull the Office 365 and Azure Active Directory Authentication Library (ADAL) dependencies into the project.
