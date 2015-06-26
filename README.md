@@ -123,7 +123,7 @@ The code for the operation to send mail is located in the sendMailMessage method
 <a name="questions-and-comments"></a>
 ## Questions and comments
 
-We'd love to get your input on this Office 365 iOS sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/O365-iOS-Connect) section of this repository. <br>
+We'd love to get your input on this Office 365 iOS Connect sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/O365-iOS-Connect) section of this repository. <br>
 Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
 
 <a name="additional-resources"></a>
