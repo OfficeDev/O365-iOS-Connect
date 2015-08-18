@@ -2,6 +2,8 @@
 
 [日本 (日本語)](/loc/README-ja.md) (日本語)
 
+[![Office 365 Connect のサンプル](/readme-images/O365-iOS-Connect-video_play_icon.png)](https://youtu.be/3v__BnV61Rs "活用できるサンプルを確認するにはこちらをクリックしてください")
+
 Office 365 への接続は、各 iOS アプリが Office 365 によって提供される豊富なデータとサービスの操作を開始するために必要な最初の手順です。このサンプルは、Office 365 に接続し、sendMail API を呼び出して、Office 365 の電子メール アカウントから電子メールを送信する方法を示します。このサンプルは、iOS アプリを Office 365 にすばやく接続する開始点として使用できます。Objective-C バージョンと Swift バージョンの両方でご利用いただけます。
 
 **目次**
