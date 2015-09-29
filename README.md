@@ -14,6 +14,7 @@ Connecting to Office 365 is the first step every iOS app must take to start work
 * [Get the Client ID and Redirect Uri into the project](#get-the-client-id-and-redirect-uri-into-the-project)
 * [Code of Interest](#code-of-interest)
 * [Questions and comments](#questions-and-comments)
+* [Troubleshooting](#troubleshooting)
 * [Additional resources](#additional-resources)
 
 
@@ -127,6 +128,17 @@ The code for the operation to send mail is located in the sendMailMessage method
 
 We'd love to get your input on this Office 365 iOS Connect sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/O365-iOS-Connect) section of this repository. <br>
 Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
+
+<a name="troubleshooting"></a>
+## Troubleshooting
+
+With the Xcode 7.0 update, App Transport Security is enabled for simulators and devices running iOS 9. See [App Transport Security Technote](https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/).
+
+For this sample we have created a temporary exception for the following domain in the plist:
+
+- outlook.office365.com
+
+If these exceptions are not included, all calls into the Office 365 API will fail in this app when deployed to an iOS 9 simulator in Xcode.
 
 <a name="additional-resources"></a>
 ## Additional resources
