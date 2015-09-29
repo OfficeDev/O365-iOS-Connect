@@ -61,7 +61,7 @@ class AuthenticationManager {
     // Acquire access and refresh tokens from Azure AD for the user
     func acquireAuthTokenWithResourceId(resourceId: String, completionHandler:((Bool) -> Void)) {
         var error: ADAuthenticationError?
-        var authContext: ADAuthenticationContext = ADAuthenticationContext(authority: authority, error:&error)
+        let authContext: ADAuthenticationContext = ADAuthenticationContext(authority: authority, error:&error)
       
         // The first time this application is run, the [ADAuthenticationContext acquireTokenWithResource]
         // manager will send a request to the AUTHORITY (see the const at the top of this file) which
@@ -74,11 +74,11 @@ class AuthenticationManager {
         authContext.acquireTokenWithResource(resourceId, clientId: clientId, redirectUri: redirectURL) {
             (result:ADAuthenticationResult!) -> Void in
 
-            if result.status.value != AD_SUCCEEDED.value {
+            if result.status.rawValue != AD_SUCCEEDED.rawValue {
                 completionHandler(false)
             }
             else {
-                var userDefaults = NSUserDefaults.standardUserDefaults()
+                let userDefaults = NSUserDefaults.standardUserDefaults()
                 
                 userDefaults.setObject(result.tokenCacheStoreItem.userInformation.userId, forKey: "LogInUser")
                 userDefaults.synchronize()
@@ -92,20 +92,20 @@ class AuthenticationManager {
     // Clear the ADAL token cache and remove this application's cookies.
     func clearCredentials () {
         var error: ADAuthenticationError?
-        var cache: ADTokenCacheStoring = ADAuthenticationSettings.sharedInstance().defaultTokenCacheStore
+        let cache: ADTokenCacheStoring = ADAuthenticationSettings.sharedInstance().defaultTokenCacheStore
 
         // Clear the token cache
-        var allItemsArray = cache.allItemsWithError(&error)
+        let allItemsArray = cache.allItemsWithError(&error)
         if (!allItemsArray.isEmpty) {
             cache.removeAllWithError(&error)
         }
     
         // Remove all the cookies from this application's sandbox. The authorization code is stored in the
         // cookies and ADAL will try to get to access tokens based on auth code in the cookie.
-        var cookieStore = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        let cookieStore = NSHTTPCookieStorage.sharedHTTPCookieStorage()
         if let cookies = cookieStore.cookies {
             for cookie in cookies {
-                cookieStore.deleteCookie(cookie as! NSHTTPCookie)
+                cookieStore.deleteCookie(cookie )
             }
         }
     }

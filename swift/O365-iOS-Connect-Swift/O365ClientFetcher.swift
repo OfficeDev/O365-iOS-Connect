@@ -42,7 +42,7 @@ class Office365ClientFetcher {
         
     func fetchOutlookClient(completionHandler:((outlookClient: MSOutlookClient) -> Void)) {
         // Get an instance of the authentication controller.
-        var authenticationManager = AuthenticationManager.sharedInstance
+        let authenticationManager = AuthenticationManager.sharedInstance
         
         // The first time this application is run, the authentication manager will send a request
         // to the authority which will redirect you to a login page. You will provide your credentials
@@ -55,12 +55,12 @@ class Office365ClientFetcher {
             (authenticated:Bool) -> Void in
 
             if (authenticated) {
-                var userDefaults = NSUserDefaults.standardUserDefaults()
+                let userDefaults = NSUserDefaults.standardUserDefaults()
                 
                 if let serviceEndpoints = userDefaults.dictionaryForKey("O365ServiceEndpoints") {
                     if let serviceEndpointUrl: AnyObject = serviceEndpoints["Mail"] {
                         // Gets the MSOutlookClient with the URL for the Mail service.
-                        var outlookClient = MSOutlookClient(url: serviceEndpointUrl as! String, dependencyResolver: authenticationManager.dependencyResolver)
+                        let outlookClient = MSOutlookClient(url: serviceEndpointUrl as! String, dependencyResolver: authenticationManager.dependencyResolver)
                         completionHandler(outlookClient: outlookClient)
                     }
                 }
@@ -69,7 +69,7 @@ class Office365ClientFetcher {
                 // Display an alert in case of an error
                 dispatch_async(dispatch_get_main_queue()) {
                     NSLog("Error in the authentication")
-                    var alert = UIAlertView(title: "Error", message: "Authentication failed. Check the log for errors.", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Error", message: "Authentication failed. Check the log for errors.", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                 }
             }
@@ -80,7 +80,7 @@ class Office365ClientFetcher {
     func fetchDiscoveryClient(completionHandler:((discoveryClient: MSDiscoveryClient) -> Void)) {
         
     // Get an instance of the authentication controller.
-    var authenticationManager:AuthenticationManager = AuthenticationManager.sharedInstance
+    let authenticationManager:AuthenticationManager = AuthenticationManager.sharedInstance
     
     // The first time this application is run, the authentication manager will send a request
     // to the authority which will redirect you to a login page. You will provide your credentials
@@ -94,14 +94,14 @@ class Office365ClientFetcher {
 
             if (authenticated) {
                 // Gets the MSDiscoveryClient with the URL for the Discovery service.
-                var discoveryClient = MSDiscoveryClient(url: "https://api.office.com/discovery/v1.0/me/", dependencyResolver: authenticationManager.dependencyResolver)
+                let discoveryClient = MSDiscoveryClient(url: "https://api.office.com/discovery/v1.0/me/", dependencyResolver: authenticationManager.dependencyResolver)
                 completionHandler(discoveryClient: discoveryClient)
             }
             else {
                 // Display an alert in case of an error
                 dispatch_async(dispatch_get_main_queue()) {
                     NSLog("Error in the authentication")
-                    var alert: UIAlertView = UIAlertView(title: "Error", message: "Authentication failed. Check the log for errors.", delegate: self, cancelButtonTitle: "OK")
+                    let alert: UIAlertView = UIAlertView(title: "Error", message: "Authentication failed. Check the log for errors.", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                 }
             }

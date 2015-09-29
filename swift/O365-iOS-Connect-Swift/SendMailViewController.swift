@@ -74,8 +74,8 @@ class SendMailViewController: UIViewController {
             
             // Call the Discovery Service and get back an array of service endpoint information
             
-            var servicesTask = servicesInfoFetcher.readWithCallback{(serviceEndPointObjects:[AnyObject]!, error:MSODataException!) -> Void in
-                var serviceEndpoints = serviceEndPointObjects as! [MSDiscoveryServiceInfo]
+            let servicesTask = servicesInfoFetcher.readWithCallback{(serviceEndPointObjects:[AnyObject]!, error:MSODataException!) -> Void in
+                let serviceEndpoints = serviceEndPointObjects as! [MSDiscoveryServiceInfo]
                 
                 if (serviceEndpoints.count > 0) {
                     // Here is where we cache the service URLs returned by the Discovery Service. You may not
@@ -89,13 +89,13 @@ class SendMailViewController: UIViewController {
                     }
                     
                     // Keep track of the service endpoints in the user defaults
-                    var userDefaults = NSUserDefaults.standardUserDefaults()
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
                     
                     userDefaults.setObject(serviceEndpointLookup, forKey: "O365ServiceEndpoints")
                     userDefaults.synchronize()
                     
                     dispatch_async(dispatch_get_main_queue()) {
-                        var userEmail = userDefaults.stringForKey("LogInUser")!
+                        let userEmail = userDefaults.stringForKey("LogInUser")!
                         var parts = userEmail.componentsSeparatedByString("@")
                         
                         self.headerLabel.text = String(format:"Hi %@!", parts[0])
@@ -123,7 +123,7 @@ class SendMailViewController: UIViewController {
     }
 
     func sendMailMessage() {
-        var message = buildMessage()
+        let message = buildMessage()
         
         // Get the MSOutlookClient. A call will be made to Azure AD and you will be prompted for credentials if you don't
         // have an access or refresh token in your token cache.
@@ -140,7 +140,7 @@ class SendMailViewController: UIViewController {
             let userFetcher = outlookClient.getMe()
             let userOperations = userFetcher.operations
             
-            var task = userOperations.sendMailWithMessage(message, saveToSentItems: true) {
+            let task = userOperations.sendMailWithMessage(message, saveToSentItems: true) {
                 (returnValue:Int32, error:MSODataException!) -> Void in
 
                 var statusText: String
@@ -170,7 +170,7 @@ class SendMailViewController: UIViewController {
     // Compose the mail message
     func buildMessage() -> MSOutlookMessage {
         // Create a new message. Set properties on the message.
-        var  message: MSOutlookMessage  = MSOutlookMessage()
+        let  message: MSOutlookMessage  = MSOutlookMessage()
         message.Subject = "Welcome to Office 365 development on iOS with the Office 365 Connect sample"
 
         // Get the recipient's email address.
@@ -178,22 +178,22 @@ class SendMailViewController: UIViewController {
         // See the helper method getRecipients to understand the usage.
         let toEmail = emailTextField.text
     
-        var recipient = MSOutlookRecipient()
+        let recipient = MSOutlookRecipient()
         recipient.EmailAddress = MSOutlookEmailAddress()
-        recipient.EmailAddress.Address = toEmail.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        recipient.EmailAddress.Address = toEmail!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     
         // The mutable array here is required to maintain compatibility with the API
         var recipientArray: [MSOutlookRecipient] = []
         recipientArray.append(recipient as MSOutlookRecipient)
-        var mutableRecipientArray = NSMutableArray(array: recipientArray)
+        let mutableRecipientArray = NSMutableArray(array: recipientArray)
         message.ToRecipients = mutableRecipientArray
 
         // Get the email text and put in the email body.
         let filePath = NSBundle.mainBundle().pathForResource("EmailBody", ofType:"html")
-        let body = NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)?.stringByReplacingOccurrencesOfString("\"", withString: "\\\"");
+        let body = (try? NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding))?.stringByReplacingOccurrencesOfString("\"", withString: "\\\"");
         
         message.Body = MSOutlookItemBody()
-        message.Body.ContentType = MSOutlookBodyType._BodyType_HTML
+        message.Body.ContentType = MSOutlookBodyType.BodyType_HTML
         message.Body.Content = body! as String
 
         return message
@@ -209,7 +209,7 @@ class SendMailViewController: UIViewController {
         
         // Clear the access and refresh tokens from the credential cache. You need to clear cookies
         // since ADAL uses information stored in the cookies to get a new access token.
-        var authenticationManager:AuthenticationManager = AuthenticationManager.sharedInstance
+        let authenticationManager:AuthenticationManager = AuthenticationManager.sharedInstance
         authenticationManager.clearCredentials()
     }
 
