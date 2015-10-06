@@ -14,6 +14,7 @@ Office 365 への接続は、各 iOS アプリが Office 365 によって提供�
 * [プロジェクトにクライアント ID とリダイレクト URI を取り込む](#get-the-client-id-and-redirect-uri-into-the-project)
 * [目的のコード](#code-of-interest)
 * [質問とコメント](#questions-and-comments)
+* [トラブルシューティング](#troubleshooting)
 * [その他の技術情報](#additional-resources)
 
 
@@ -127,6 +128,17 @@ Office 365 探索サービスを使用して Exchange サービスのエンド�
 ## 質問とコメント
 
 iOS 版 Office 365 のサンプルについて、Microsoft にフィードバックをお寄せください。フィードバックは、このリポジトリの「[問題](https://github.com/OfficeDev/O365-iOS-Connect)」セクションに送信できます。<br>Office 365 の開発全般については、 「[スタックオーバーフロー](http://stackoverflow.com/questions/tagged/Office365+API)」に送信してください。質問には、必ず [Office365] および [API] のタグを付けてください。
+
+<a name="troubleshooting"></a>
+## トラブルシューティング
+
+Xcode 7.0 のアップデートにより、iOS 9 を実行するシミュレーターやデバイス用に App Transport Security を使用できるようになりました。「[App Transport Security のテクニカル ノート](https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/)」を参照してください。
+
+このサンプルでは、plist 内の次のドメインのために一時的な例外を作成しました:
+
+- outlook.office365.com
+
+これらの例外が含まれていないと、Xcode で iOS 9 シミュレーターにデプロイされたときに、このアプリで Office 365 API へのすべての呼び出しが失敗します。
 
 <a name="additional-resources"></a>
 ## その他の技術情報
