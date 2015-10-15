@@ -138,7 +138,7 @@ class SendMailViewController: UIViewController {
             }
             
             let userFetcher = outlookClient.getMe()
-            let userOperations = userFetcher.operations
+            let userOperations = (userFetcher.operations as MSOutlookUserOperations)
             
             let task = userOperations.sendMailWithMessage(message, saveToSentItems: true) {
                 (returnValue:Int32, error:MSODataException!) -> Void in

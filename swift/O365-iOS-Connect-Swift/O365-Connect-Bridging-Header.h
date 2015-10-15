@@ -7,15 +7,18 @@
 
 #import <ADALiOS/ADAuthenticationContext.h>
 #import <ADALiOS/ADAuthenticationSettings.h>
-#import <ADALiOS/ADLogger.h>
-#import <ADALiOS/ADInstanceDiscovery.h>
-#import <office365_odata_base/office365_odata_base.h>
-#import <office365_exchange_sdk/office365_exchange_sdk.h>
 #import <office365_discovery_sdk.h>
 #import <MSOutlookClient.h>
+#import <ADALiOS/ADAuthenticationError.h>
+#import <MSOutlookUserCollectionFetcher.h>
+#import <MSOutlookUserFetcher.h>
+#import <MSOutlookUserOperations.h>
 
 
 #endif
+
+//-(MSOutlookUserCollectionFetcher*) getUsers;
+//-(MSOutlookUserFetcher*) getMe;
 
 // *********************************************************
 //
