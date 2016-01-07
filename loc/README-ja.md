@@ -14,6 +14,7 @@ Office 365 への接続は、各 iOS アプリが Office 365 によって提供�
 * [プロジェクトにクライアント ID とリダイレクト URI を取り込む](#get-the-client-id-and-redirect-uri-into-the-project)
 * [目的のコード](#code-of-interest)
 * [質問とコメント](#questions-and-comments)
+* [トラブルシューティング](#troubleshooting)
 * [その他の技術情報](#additional-resources)
 
 
@@ -25,7 +26,7 @@ iOS 版 Office 365 Connect アプリを実行するには、以下が必要で�
 
 * 
             Apple 社の [Xcode](https://developer.apple.com/)。
-* Office 365 アカウント。Office 365 アカウントは、[Office 365 開発者向けサイト](http://msdn.microsoft.com/library/office/fp179924.aspx)にサインアップすると取得できます。これにより、Office 365 のデータを対象とするアプリの作成に使用できる API にアクセスできるようになります。
+* Office 365 アカウント。Office 365 アカウントは、[Office 365 開発者向けサイト](http://msdn.microsoft.com/ja-jp/library/office/fp179924.aspx)にサインアップすると取得できます。これにより、Office 365 のデータを対象とするアプリの作成に使用できる API にアクセスできるようになります。
 * アプリケーションを登録する Microsoft Azure テナント。Azure Active Directory は、アプリケーションが認証と承認に使用する ID サービスを提供します。試用版のサブスクリプションを作成し、O365 アカウントに関連付ける方法の詳細については、「[Office 365 の開発環境を設定](https://msdn.microsoft.com/office/office365/howto/setup-development-environment)」および 「**新しい Azure サブスクリプションを作成し、Office 365 アカウントに関連付ける**」のセクションを参照してください。
 
   **重要事項**:Azure サブスクリプションが既ある場合、Office 365 アカウントにそのサブスクリプションをバインドする必要があります。この工程の詳細については、「[Office 365 の開発環境を設定する](https://msdn.microsoft.com/office/office365/howto/setup-development-environment)」 および「 **Office 365 アカウントを Azure AD と関連付けてアプリを作成および管理する**」のセクションを参照してください。
@@ -128,6 +129,17 @@ Office 365 探索サービスを使用して Exchange サービスのエンド�
 
 iOS 版 Office 365 のサンプルについて、Microsoft にフィードバックをお寄せください。フィードバックは、このリポジトリの「[問題](https://github.com/OfficeDev/O365-iOS-Connect)」セクションに送信できます。<br>Office 365 の開発全般については、 「[スタックオーバーフロー](http://stackoverflow.com/questions/tagged/Office365+API)」に送信してください。質問には、必ず [Office365] および [API] のタグを付けてください。
 
+<a name="troubleshooting"></a>
+## トラブルシューティング
+
+Xcode 7.0 のアップデートにより、iOS 9 を実行するシミュレーターやデバイス用に App Transport Security を使用できるようになりました。「[App Transport Security のテクニカル ノート](https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/)」を参照してください。
+
+このサンプルでは、plist 内の次のドメインのために一時的な例外を作成しました:
+
+- outlook.office365.com
+
+これらの例外が含まれていないと、Xcode で iOS 9 シミュレーターにデプロイされたときに、このアプリで Office 365 API へのすべての呼び出しが失敗します。
+
 <a name="additional-resources"></a>
 ## その他の技術情報
 
@@ -139,6 +151,5 @@ iOS 版 Office 365 のサンプルについて、Microsoft にフィードバッ
 * [予定表の REST 操作のリファレンス](http://msdn.microsoft.com/office/office365/api/calendar-rest-operations)
 * [Office デベロッパー センター](http://dev.office.com/)
 * [Office 365 API のサンプル コードとビデオ](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
-
 
 
