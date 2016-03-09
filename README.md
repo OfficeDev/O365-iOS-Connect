@@ -13,7 +13,6 @@ Connecting to Office 365 is the first step every iOS app must take to start work
 * [Register your app with Microsoft Azure](#register-your-app-with-microsoft-azure)
 * [Get the Client ID and Redirect Uri into the project](#get-the-client-id-and-redirect-uri-into-the-project)
 * [Code of Interest](#code-of-interest)
-* [Questions and comments](#questions-and-comments)
 * [Troubleshooting](#troubleshooting)
 * [Additional resources](#additional-resources)
 
@@ -123,11 +122,6 @@ The code for using the O365 Discovery service to retrieve the Exchange service e
 The code for the operation to send mail is located in the sendMailMessage method in the SendMailViewController.
 
 
-<a name="questions-and-comments"></a>
-## Questions and comments
-
-We'd love to get your input on this Office 365 iOS Connect sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/O365-iOS-Connect) section of this repository. <br>
-Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
 
 <a name="troubleshooting"></a>
 ## Troubleshooting
