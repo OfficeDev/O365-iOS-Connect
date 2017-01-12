@@ -144,4 +144,3 @@ Xcode 7.0 のアップデートにより、iOS 9 を実行するシミュレー�
 * [予定表の REST 操作のリファレンス](http://msdn.microsoft.com/office/office365/api/calendar-rest-operations)
 * [Office デベロッパー センター](http://dev.office.com/)
 * [Office 365 API のコード サンプルとビデオ](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
-
