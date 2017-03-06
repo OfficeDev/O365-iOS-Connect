@@ -1,4 +1,4 @@
-#<a name="office-365-connect-app-for-ios"></a>iOS# 版 Office 365 Connect アプリ#
+﻿#<a name="office-365-connect-app-for-ios"></a>iOS# 版 Office 365 Connect アプリ#
 
 [日本 (日本語)](/loc/README-ja.md) (日本語)
 
