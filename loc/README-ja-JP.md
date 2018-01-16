@@ -1,4 +1,4 @@
-﻿#<a name="office-365-connect-app-for-ios"></a>iOS# 版 Office 365 Connect アプリ#
+#<a name="office-365-connect-app-for-ios"></a>iOS# 版 Office 365 Connect アプリ
 
 [日本 (日本語)](/loc/README-ja.md) (日本語)
 
@@ -144,3 +144,7 @@ Xcode 7.0 のアップデートにより、iOS 9 を実行するシミュレー�
 * [予定表の REST 操作のリファレンス](http://msdn.microsoft.com/office/office365/api/calendar-rest-operations)
 * [Office デベロッパー センター](http://dev.office.com/)
 * [Office 365 API のコード サンプルとビデオ](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
+
+
+
+このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) が採用されています。詳細については、「[Code of Conduct の FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」を参照してください。また、その他の質問やコメントがあれば、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。
